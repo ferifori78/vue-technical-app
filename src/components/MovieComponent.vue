@@ -4,7 +4,7 @@
     <div class="p-1">
       <img class="rounded-l-md" style="height: 100%" :src="posterUrlFormatted" :alt="posterUrlFormatted"/>
     </div>
-    <div style="display: block; width: 15vw; position:relative;" class="py-4 px-2.5">
+    <div style="display: block; width: 18vw; position:relative;" class="py-4 px-2.5">
       <div class="font-bold">{{ film.Title }}</div>
       <div style="position: absolute; bottom: 1rem">
         <div style="display: flex"><img :src="calenderIconPath" :alt="calenderIconPath"/>

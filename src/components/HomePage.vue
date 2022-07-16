@@ -31,7 +31,7 @@
                 @click="NEXT_PAGE">Next Page
         </button>
       </div>
-      <div>Showing result {{ currentPage }}-{{ Math.ceil(films.length / 20) }}</div>
+      <div>Showing result {{ currentPage }}-{{ totalPages }}</div>
     </div>
   </div>
 </template>
@@ -39,7 +39,6 @@
 <script>
 
 import MovieComponent from "@/components/MovieComponent";
-// import {ref} from 'vue';
 import DatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css';
 import {mapState, mapActions} from "vuex";
@@ -52,7 +51,7 @@ export default {
   components: {MovieComponent, DatePicker},
   data() {
     return {
-      date: undefined,
+      date: [],
       // films: [],
       // page: 1,
       perPage: 20,
@@ -71,6 +70,7 @@ export default {
     },
     ...mapActions([
       "NEXT_PAGE",
+      "SET_PAGE",
       "PREV_PAGE",
     ])
   },
@@ -81,13 +81,8 @@ export default {
   ]),
   created() {
     this.$store.dispatch('CACHE_GENRE_LIST');
+    this.setDate();
   }
-  // setup() {
-  //   const date = ref();
-  //   return {
-  //     date
-  //   }
-  // }
 }
 </script>
 

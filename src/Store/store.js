@@ -7,8 +7,8 @@ const store = new Vuex.Store({
     state: {
         totalPages: undefined,
         currentPage: undefined,
-        startDate: "07/16/2020",
-        endDate: "07/16/2022",
+        startDate: undefined,
+        endDate: undefined,
         films: [],
         filmDetail: {},
         genreList: undefined,
@@ -23,6 +23,7 @@ const store = new Vuex.Store({
             context.dispatch('SET_PAGE', 1);
         },
         SET_PAGE: function (context, page) {
+            console.log(page)
             // fetch first page of search page
             api.discover_movies({
                 'language': 'en-US',

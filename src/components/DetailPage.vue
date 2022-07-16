@@ -57,7 +57,7 @@ export default {
   props: {filmId: String},
   data() {
     return {
-      poster: require('/src/assets/download.jpg'),
+      // poster: require('/src/assets/download.jpg'),
       // films: []
     }
   },

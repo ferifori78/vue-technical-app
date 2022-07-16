@@ -23,6 +23,7 @@ export default {
                 // mutate films list state
                 const translatedFilms = res.data.results.map((item) => {
                     return {
+                        totalResults: item.total_results,
                         originalTitle: item.original_title,
                         genres: item.genre_ids.map((g) => {
                             return {
@@ -64,8 +65,6 @@ export default {
                 }
             }).then((res) => {
                 console.log(res.data);
-
-                // mutate films list state
                 const translatedFilmDetail = {
                     budget: res.data.budget,
                     genres: res.data.genres,

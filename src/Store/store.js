@@ -5,7 +5,7 @@ import moment from "moment";
 
 const store = new Vuex.Store({
     state: {
-        totalPages: undefined,
+        totalPages: 0,
         currentPage: undefined,
         startDate: undefined,
         endDate: undefined,
@@ -45,6 +45,7 @@ const store = new Vuex.Store({
         },
         NEXT_PAGE() {
             // checking max page to next navigate
+            console.log('asdasd')
             if (this.state.currentPage + 1 <= this.state.totalPages)
                 this.dispatch('SET_PAGE', this.state.currentPage + 1);
         },

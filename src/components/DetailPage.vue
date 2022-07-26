@@ -13,11 +13,11 @@
 <!--    <div v-show="!filmDetail.length">-->
 <!--      <img :src="loader" style="margin: 30px auto">-->
 <!--    </div>-->
-    <div  style="display: flex" class="py-12">
+    <div  class="py-12 md:flex sm:block">
       <div>
         <img class="rounded-lg" :src=posterUrlFormatted :alt="posterUrlFormatted">
       </div>
-      <div class="px-6 py-6" style="width: 65vw">
+      <div class="px-6 py-6" style="width: 100%">
         <div style="display: flex; justify-content: space-between"><div class="font-bold">Budget</div><div>{{ (costCurrency) ? costCurrency : "" }}</div></div>
         <br/>
         <div style="display: flex; justify-content: space-between"><div class="font-bold">Revenue</div><div>{{ (filmDetail.revenue) ? filmDetail.revenue : "" }}</div></div>
@@ -57,7 +57,7 @@ export default {
   props: {filmId: String},
   data() {
     return {
-      // poster: require('/src/assets/download.jpg'),
+      loader: require('/src/assets/loader.png'),
       // films: []
     }
   },

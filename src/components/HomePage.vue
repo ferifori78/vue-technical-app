@@ -1,10 +1,14 @@
 <template>
   <div class="py-12 md:w-auto lg:mx-32 md:mx-24 sm:mx-12">
-    <div class="py-6 px-12 rounded-md bg-gray-300" style="width: 100% ;   display: flex;
+    <div class="lg:flex md:block py-6 px-12 rounded-md bg-gray-300" style="width: 100%; height: 15vh;
     align-items: center; position:relative;">
-      <div style="padding-right: 1vw">Search by release date :</div>
-      <div style="width: 20vw">
-        <DatePicker v-model="date" range :enableTimePicker="false" :disabled-week-days="true"/>
+      <div class="md:block lg:flex justify-center">
+        <div style="padding-right: 1vw;  display: grid;
+  align-items: center;
+}">Search by release date :</div>
+        <div style="width: 30vw">
+          <DatePicker v-model="date" range :enableTimePicker="false" :disabled-week-days="true"/>
+        </div>
       </div>
       <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
               @click="setDate"
@@ -15,7 +19,7 @@
       <img :src="loader" style="margin: 30px auto">
     </div>
     <div v-if="films.length"
-        class="rounded-md my-8 grid lg:grid-cols-3 md:grid-cols-2 gap-x-12 gap-y-6">
+        class="rounded-md my-8 grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 gap-x-6 gap-y-6">
       <MovieComponent
           @click="gotoDetailPage(f.id)"
           v-for="f in films.slice(perPage * (currentPage -1), perPage * currentPage)" :film="f"
